@@ -39,6 +39,27 @@
         </nav>
     </header>
     <main>
+        <section>
+            <div id="catCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                    <img src="/img/cat1.jpeg" class="d-block w-100 carousel-img" alt="Gato curioso">
+                    </div>
+                    <div class="carousel-item">
+                    <img src="/img/cat2.jpeg" class="d-block w-100 carousel-img" alt="Gato dormido">
+                    </div>
+                    <div class="carousel-item">
+                    <img src="/img/cat3.jpeg" class="d-block w-100 carousel-img" alt="Gato relajado">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#catCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#catCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </section>
         <!-- 🛍️ Products -->
         <section class="products-container">
             <div class="product-card">
@@ -48,7 +69,6 @@
             <button class="btn-buy">Add to Cart</button>
             </div>
         </section>
-        
     </main>
     <footer class="bg-dark text-light py-4 mt-5 border-top">
         <div class="container">

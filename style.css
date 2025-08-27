@@ -37,6 +37,15 @@ a[title="logo"]:hover img{
 .naranja-fuerte {
     filter: brightness(0) saturate(100%) invert(55%) sepia(90%) saturate(600%) hue-rotate(320deg) brightness(100%) contrast(105%);
 }
+
+
+.carousel-img {
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+
 /* ============================
    🛍️ PRODUCT CARD STYLES
 ============================= */

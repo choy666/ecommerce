@@ -92,6 +92,10 @@ a[title="logo"]:hover img{
 footer i {
   font-size: 1.3rem;
 }
+.text-creador {
+  font-size: 0.8rem;
+  color: #c46800 !important;
+}
 /* 📱 Estilos específicos para pantallas pequeñas */
 @media (max-width: 425px) {
   .footer-links {
@@ -112,3 +116,27 @@ footer i {
     font-size: 1.4rem;
   }
 }
+
+
+/* Estilos minimalistas para el footer */
+.footer {
+  background-color: #111;
+  color: #ccc;
+  text-align: center;
+  padding: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.9rem;
+}
+.footer a {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: 500;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+.footer i {
+  color: #ffd700;
+  margin-right: 4px;
+}
+

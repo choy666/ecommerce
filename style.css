@@ -58,6 +58,15 @@ footer i {
   font-size: 0.8rem;
   color: #c46800 !important;
 }
+.seccion-carrusel {
+  width: 45%;
+  max-width: 100%;
+  margin: 0 auto; /* Centra el carrusel */
+  padding: 2rem;
+  box-shadow: 0px 0px 60px 5px #00000066;
+  border-radius: 15px;
+  
+}
 /* 📱 Estilos específicos para pantallas pequeñas */
 @media (max-width: 425px) {
   .footer-links {
@@ -86,7 +95,7 @@ footer i {
 }
 @media (max-width: 768px) {
   .seccion-carrusel {
-    width: 80%;
+    width: 60%;
   }
 }
 /* Estilos minimalistas para el footer */
@@ -111,15 +120,7 @@ footer i {
   margin-right: 4px;
 }
 /*  */
-.seccion-carrusel {
-  width: 45%;
-  max-width: 100%;
-  margin: 0 auto; /* Centra el carrusel */
-  padding: 2rem;
-  box-shadow: 0px 0px 60px 5px #00000066;
-  border-radius: 15px;
-  
-}
+
 .card-producto {
   border-radius: 8px;
   text-align: center;

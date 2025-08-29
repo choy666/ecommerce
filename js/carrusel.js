@@ -25,12 +25,15 @@ document.addEventListener('DOMContentLoaded', async function () {
       pagination: false,
       arrows: true,
       drag: true,
+      pauseOnFocus: true,
+      pauseOnHover: true,
+      autoplay: true,         // ✅ Activa el cambio automático
+      interval: 3000,         // ⏱️ Tiempo entre slides (en milisegundos)
       breakpoints: {
         768: { perPage: 1 },
         480: { perPage: 1 }
       }
     }).mount();
-
   } catch (error) {
     console.error('Error al cargar productos:', error);
   }

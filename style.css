@@ -80,6 +80,9 @@ footer i {
   .splide__list {
     height: 110px;
   }
+  .seccion-carrusel {
+    width: 80%;
+  }
 }
 @media (max-width: 768px) {
   .seccion-carrusel {

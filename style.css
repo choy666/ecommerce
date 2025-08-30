@@ -6,11 +6,13 @@ body {
   padding: 0;
   color: #212529;
 }
+.color-page{
+  color: #ff6f00 !important; /* Cambia este color según tu paleta */
+}
 /* ============================🧭NAVBAR STYLES============================= */
 /* carrito */
 a[title="carrito"] i.bi-cart-fill {
   transition: color 0.2s ease-in-out;
-  color: rgb(255, 111, 0) !important; /* o cualquier color claro que contraste */
 }
 a[title="carrito"]:hover i.bi-cart-fill {
   color: #ffffff !important; /* o cualquier color claro que contraste */
@@ -19,9 +21,38 @@ a[title="carrito"]:hover i.bi-cart-fill {
 a[title="logo"]:hover img{
   color: #ffa726 !important; /* o cualquier color claro que contraste */
 }
-/* Botón del menú hamburguesa */
-.navbar-toggler-icon{
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 111, 0)' stroke-width='4' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+/* From Uiverse.io by PriyanshuGupta28 */ 
+.input[type="checkbox"] {
+  display: none;
+}
+/* boton hamburguesa */ 
+.navbar-toggler{
+    width: 22px;
+    height: 22px;
+    border: 1px solid #ff6f00;
+}
+.custom-checkbox {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+}
+.custom-checkbox::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background-color: #ff6f00; /* Cambia este color según tu paleta */
+  border-radius: 3px;
+  opacity: 0;
+}
+.input[type="checkbox"]:checked + .custom-checkbox::after {
+  opacity: 1;
 }
 .navbar-brand {
   color: #ff6f00 !important; /* Cambia este color según tu paleta */
@@ -34,10 +65,10 @@ a[title="logo"]:hover img{
    transform: scale(1.1);
    filter: brightness(0) saturate(100%) invert(100%);
 }
-.naranja-fuerte {
-    filter: brightness(0) saturate(100%) invert(55%) sepia(90%) saturate(600%) hue-rotate(320deg) brightness(100%) contrast(105%);
+.logo-color {
+  /* Cambia este color según tu aleta */
+  filter: brightness(0) saturate(100%) invert(55%) sepia(90%) saturate(600%) hue-rotate(320deg) brightness(100%) contrast(105%);
 }
-
 /* ============================🧱 FOOTER STYLES============================= */
 .footer-link {
   color: #ff6f00;
@@ -59,13 +90,41 @@ footer i {
   color: #c46800 !important;
 }
 .seccion-carrusel {
-  width: 45%;
-  max-width: 100%;
   margin: 0 auto; /* Centra el carrusel */
   padding: 2rem;
-  box-shadow: 0px 0px 60px 5px #00000066;
   border-radius: 15px;
-  
+  box-shadow: 15px 15px 30px #bebebe,-15px -15px 30px #ffffff;
+}
+/* ubicacion y redes */ 
+.card-ui {
+  background: rgb(38, 38, 38);
+  box-shadow: 15px 15px 30px #bebebe,-15px -15px 30px #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+}
+/* iframe */ 
+.ubicacion{
+  border-color: #141414;
+  background-color: #414141;
+  height: 400px;
+  border-radius: 15px;
+}
+/*______Social Media______*/
+.social-media a {
+  max-width: 50px;
+  text-decoration: none;
+  color: inherit;
+}
+.social-media a:hover{
+  transition: 0.5s;
+  border-radius: 50px;
+  transform: scale(2);
+}
+.social-media a svg {
+  max-width: 100%;
+  color: #ff6f00;
+  width: 100%;
+  fill: currentColor;
 }
 /* 📱 Estilos específicos para pantallas pequeñas */
 @media (max-width: 425px) {
@@ -75,7 +134,6 @@ footer i {
     text-align: left;
     padding-left: 1rem;
   }
-
   .footer-link {
     justify-content: center;
     width: 100%;
@@ -86,16 +144,13 @@ footer i {
   footer i {
     font-size: 1.4rem;
   }
-  .splide__list {
-    height: 110px;
-  }
-  .seccion-carrusel {
-    width: 80%;
+  .ubicacion{
+    height: 150px;
   }
 }
 @media (max-width: 768px) {
-  .seccion-carrusel {
-    width: 60%;
+  .ubicacion{
+    height: 250px;
   }
 }
 /* Estilos minimalistas para el footer */
@@ -151,19 +206,17 @@ footer i {
 }
 
 .minicard-scroll {
+  padding: 10px;
   padding-top: 50px; /* Espacio para la imagen flotante */
   overflow-x: auto;
   -ms-overflow-style: none;  /* IE y Edge */
   scrollbar-width: none;     /* Firefox */
 }
-
 .minicard-scroll::-webkit-scrollbar {
   display: none;             /* Chrome, Safari y Opera */
 }
 
-
 .minicard {
-  flex: 1 1 250px;
   max-width: 300px;
   backdrop-filter: blur(7px);
   background-color: rgba(255, 255, 255, 0.5);
@@ -200,7 +253,13 @@ footer i {
   font-size: clamp(0.8rem, 1.5vw, 1rem);
   font-weight: bold;
 
-
 }.minicard-content h4{
   font-size: clamp(0.7rem, 1.3vw, 0.9rem);
+}
+
+.texto-redes {
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  font-weight: 600;
+  color: #ffffff;
+  white-space: nowrap; /* mantiene el texto en una sola línea */
 }

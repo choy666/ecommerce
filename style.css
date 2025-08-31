@@ -341,3 +341,43 @@ footer i {
 #contenedor-productos .btn {
 margin: 0px !important;
 }
+
+.mydict div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5em;
+  align-content: center;
+  align-items: center;
+}
+.form-check-input {
+  width: 50px !important;
+  height: 20px;
+}
+.mydict input[type="radio"] {
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.mydict input[type="radio"]:checked + span {
+  box-shadow: 0 0 0 0.0625em #ff6f00;
+  background-color: #ffe7cc;
+  z-index: 1;
+}
+
+.mydict label span {
+  display: block;
+  cursor: pointer;
+  background-color: #fff;
+  padding: 0.375em 0.75em;
+  margin-left: 0.0625em;
+  box-shadow: 0 0 0 0.0625em #b5bfd9;
+  letter-spacing: 0.05em;
+  color: #3e4963;
+  text-align: center;
+  transition: background-color 0.5s ease;
+  border-radius: 0.375em;
+}

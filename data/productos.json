@@ -4,39 +4,48 @@
     "precio": 12990,
     "imagen": "/img/cat1.jpeg",
     "destacado": true,
-    "descripcion": "Zapatillas cómodas y modernas para uso diario."
+    "descripcion": "Zapatillas cómodas y modernas para uso diario.",
+    "categoria": "AAA"
   },
   {
     "nombre": "Campera Impermeable",
     "precio": 18500,
     "imagen": "img/cat2.jpeg",
     "destacado": true,
-    "descripcion": "Campera ligera y resistente al agua, ideal para cualquier clima."
+    "descripcion": "Campera ligera y resistente al agua, ideal para cualquier clima.",
+    "categoria": "AAA"
   },
   {
     "nombre": "Mochila Táctica",
     "precio": 9800,
     "imagen": "img/cat3.jpeg",
     "destacado": true,
-    "descripcion": "Mochila duradera con múltiples compartimentos para organización."
+    "descripcion": "Mochila duradera con múltiples compartimentos para organización.",
+    "categoria": "BBB"
   },
   {
     "nombre": "Reloj Deportivo",
     "precio": 22000,
     "imagen": "img/cat1.jpeg",
-    "descripcion": "Reloj con GPS y monitor de ritmo cardíaco para actividades al aire libre."
+    "destacado": false,
+    "descripcion": "Reloj con GPS y monitor de ritmo cardíaco para actividades al aire libre.",
+    "categoria": "BBB"
   },
   {
     "nombre": "Auriculares Inalámbricos",
     "precio": 15000,
     "imagen": "img/cat2.jpeg",
-    "descripcion": "Auriculares con cancelación de ruido y excelente calidad de sonido."
+    "destacado": false, 
+    "descripcion": "Auriculares con cancelación de ruido y excelente calidad de sonido.",
+    "categoria": "CCC"
 
   },
   {
     "nombre": "Gafas de Sol",
     "precio": 7500,
     "imagen": "img/cat3.jpeg",
-    "descripcion": "Gafas de sol con protección UV y diseño elegante."
+    "destacado": false,
+    "descripcion": "Gafas de sol con protección UV y diseño elegante.",
+    "categoria": "DDD"
   }
 ]

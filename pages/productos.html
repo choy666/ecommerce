@@ -41,10 +41,24 @@
         </ul>
       </div>
     </nav>
-    <!-- 🛍️ Sección de productos -->
     <main class="container py-5">
-      <h2 class="text-center mb-4 color-page">Nuestros Productos</h2>
-      <div class="row g-4 justify-content-center" id="contenedor-productos"></div>
+      <!-- 🛍️ Filtros de productos -->
+      <div class="container mb-4">
+        <div class="mydict">
+          <div id="filtroCategoriaContainer">
+            <!-- Se llenará dinámicamente con botones -->
+          </div>
+          <div class="form-check form-switch mt-3 text-center">
+            <input class="form-check-input" type="checkbox" id="filtroDestacado">
+            <label class="form-check-label text-creador" for="filtroDestacado">
+              <h3 class="text-black">Solo destacados</h3>
+            </label>
+          </div>
+        </div>
+      </div>
+      <!-- 🛍️ Sección de productos -->
+      <h2 class="text-center color-page">Nuestros Productos</h2>
+      <div class="row g-5 justify-content-center mt-1" id="contenedor-productos"></div>
       </div>
     </main>
     <!-- 🔻 Footer (reutilizado y adaptado) -->

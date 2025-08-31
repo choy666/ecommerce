@@ -2,16 +2,34 @@
   {
     "nombre": "Zapatillas Urbanas",
     "precio": 12990,
-    "imagen": "/img/cat1.jpeg"
+    "imagen": "/img/cat1.jpeg",
+    "destacado": true
   },
   {
     "nombre": "Campera Impermeable",
     "precio": 18500,
-    "imagen": "img/cat2.jpeg"
+    "imagen": "img/cat2.jpeg",
+    "destacado": true
   },
   {
     "nombre": "Mochila Táctica",
     "precio": 9800,
+    "imagen": "img/cat3.jpeg",
+    "destacado": true
+  },
+  {
+    "nombre": "Reloj Deportivo",
+    "precio": 22000,
+    "imagen": "img/cat1.jpeg"
+  },
+  {
+    "nombre": "Auriculares Inalámbricos",
+    "precio": 15000,
+    "imagen": "img/cat2.jpeg"
+  },
+  {
+    "nombre": "Gafas de Sol",
+    "precio": 7500,
     "imagen": "img/cat3.jpeg"
   }
 ]

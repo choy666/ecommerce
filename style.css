@@ -4,7 +4,6 @@ body {
   background-color: #f8f9fa;
   margin: 0;
   padding: 0;
-  color: #212529;
 }
 .color-page{
   color: #ff6f00 !important; /* Cambia este color según tu paleta */
@@ -118,7 +117,7 @@ footer i {
 .social-media a:hover{
   transition: 0.5s;
   border-radius: 50px;
-  transform: scale(2);
+  transform: scale(1.5);
 }
 .social-media a svg {
   max-width: 100%;
@@ -146,6 +145,9 @@ footer i {
   }
   .ubicacion{
     height: 150px;
+  }
+  .card img{
+    height: 130px; /* Ajustá según tu diseño */
   }
 }
 @media (max-width: 768px) {
@@ -262,4 +264,25 @@ footer i {
   font-weight: 600;
   color: #ffffff;
   white-space: nowrap; /* mantiene el texto en una sola línea */
+}
+
+/* From Uiverse.io by Codewithvinay */ 
+.card {
+ border-radius: 20px;
+ box-shadow: 20px 20px 60px #bebebe,-20px -20px 60px #ffffff;
+ transition: all .3s;
+}
+.card:hover {
+  transform: scale(0.9);
+}
+
+.card img{
+  height: 300px; /* Ajustá según tu diseño */
+  object-fit: cover; /* Recorta sin deformar */
+  width: 100%; /* Asegura que se adapte al contenedor */
+  display: block;
+  border-radius: 20px;
+}
+.card-text{
+  font-weight:bolder
 }

@@ -86,15 +86,15 @@ if (finalizarBtn) {
     const telefono = "383-000-0000";// 📤 numero tel del comercio
     const cuit = "10223093481";// 📤 numero de hab del comercio-cuit
 
-    let ticket = ` ${empresa}\n${direccion}\nTel: ${telefono} | Cuit: ${cuit}\n`;
-    ticket += `Fecha: ${formatoFecha} - Hora: ${formatoHora}\n`;
+    let ticket = ` ${empresa}\n${direccion}\nTel: ${telefono}\nTCuit: ${cuit}\n`;
+    ticket += `Fecha: ${formatoFecha} - \nHora: ${formatoHora}\n`;
     ticket += `Cliente: Público General\n`;
     ticket += `Ticket #${Math.floor(Math.random() * 1000000).toString().padStart(7, '0')}\n`;
     ticket += `----------------------------------\n`;
 
     let subtotal = 0;
     carrito.forEach((item, i) => {
-      ticket += `${i + 1}. ${item.nombre} - $${item.precio.toFixed(2)}\n`;
+      ticket += `${i + 1}. ${item.nombre} - \n $${item.precio.toFixed(2)}\n`;
       subtotal += item.precio;
     });
 

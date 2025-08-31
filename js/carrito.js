@@ -1,10 +1,9 @@
 const carrito = [];
-const botonesAgregar = document.querySelectorAll('.bi-bag-plus-fill');
 const carritoLista = document.getElementById('carritoLista');
 const carritoTotal = document.getElementById('carritoTotal');
 const contadorCarrito = document.getElementById('contadorCarrito');
 
-// Cargar carrito desde localStorage
+// 🧠 Cargar carrito desde localStorage
 function cargarCarrito() {
   const guardado = localStorage.getItem('carrito');
   if (guardado) {
@@ -13,26 +12,32 @@ function cargarCarrito() {
   }
 }
 
-// Guardar carrito en localStorage
+// 💾 Guardar carrito en localStorage
 function guardarCarrito() {
   localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
-// Agregar producto
-botonesAgregar.forEach((btn) => {
-  btn.addEventListener('click', () => {
-    const card = btn.closest('.card');
-    const nombre = card.querySelector('.card-title').textContent.trim();
-    const precio = parseFloat(card.querySelector('.card-text').textContent.replace('$', '').replace('.', '').trim());
-    const producto = { nombre, precio };
+// 🛒 Delegación de eventos para agregar productos
+document.addEventListener('click', (e) => {
+  const enlace = e.target.closest('a.btn-outline-dark');
+  if (enlace) {
+    e.preventDefault();
 
-    carrito.push(producto);
-    guardarCarrito();
-    actualizarCarrito();
-  });
+    const card = enlace.closest('.card');
+    const nombre = card.querySelector('.card-title')?.textContent.trim();
+    const precioTexto = card.querySelector('.card-text')?.textContent.trim();
+    const precio = parseFloat(precioTexto?.replace('$', '').replace('.', ''));
+
+    if (nombre && !isNaN(precio)) {
+      const producto = { nombre, precio };
+      carrito.push(producto);
+      guardarCarrito();
+      actualizarCarrito();
+    }
+  }
 });
 
-// Actualizar vista del carrito
+// 🔄 Actualizar vista del carrito
 function actualizarCarrito() {
   carritoLista.innerHTML = '';
   let total = 0;
@@ -56,7 +61,6 @@ function actualizarCarrito() {
   carritoTotal.textContent = `$${total}`;
   contadorCarrito.textContent = carrito.length;
 
-  // Botones de eliminar
   const botonesEliminar = carritoLista.querySelectorAll('button[data-index]');
   botonesEliminar.forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -68,8 +72,53 @@ function actualizarCarrito() {
   });
 }
 
-// Inicializar
+// 📤 Finalizar compra y enviar ticket por WhatsApp
+const finalizarBtn = document.querySelector('.btn.btn-dark.mt-3');
+if (finalizarBtn) {
+  finalizarBtn.addEventListener('click', () => {
+    if (carrito.length === 0) return;
+
+    const fecha = new Date();
+    const formatoFecha = fecha.toLocaleDateString('es-AR');
+    const formatoHora = fecha.toLocaleTimeString('es-AR');
+    const empresa = "LumenCommerce™";// 📤 nombre del comercio
+    const direccion = "Catamarca - Capital";
+    const telefono = "383-000-0000";// 📤 numero tel del comercio
+    const cuit = "10223093481";// 📤 numero de hab del comercio-cuit
+
+    let ticket = ` ${empresa}\n${direccion}\nTel: ${telefono} | Cuit: ${cuit}\n`;
+    ticket += `Fecha: ${formatoFecha} - Hora: ${formatoHora}\n`;
+    ticket += `Cliente: Público General\n`;
+    ticket += `Ticket #${Math.floor(Math.random() * 1000000).toString().padStart(7, '0')}\n`;
+    ticket += `----------------------------------\n`;
+
+    let subtotal = 0;
+    carrito.forEach((item, i) => {
+      ticket += `${i + 1}. ${item.nombre} - $${item.precio.toFixed(2)}\n`;
+      subtotal += item.precio;
+    });
+
+    const total = subtotal;
+
+    ticket += `----------------------------------\n`;
+    ticket += `TOTAL: $${total.toFixed(2)}\n`;
+    ticket += `----------------------------------\n`;
+    ticket += `¡GRACIAS POR TU COMPRA\nNO SE ACEPTAN CAMBIOS NI DEVOLUCIONES`;
+
+    // Número de WhatsApp destino (con código de país, sin +)
+    const numeroDestino = "5493834046923"; // ← numero del comercio
+    const mensajeCodificado = encodeURIComponent(ticket);
+    const urlWhatsApp = `https://wa.me/${numeroDestino}?text=${mensajeCodificado}`;
+
+    window.open(urlWhatsApp, '_blank');
+
+    carrito.splice(0, carrito.length);
+    guardarCarrito();
+    actualizarCarrito();
+  });
+}
+
+// 🚀 Inicializar
 if (carritoLista && carritoTotal && contadorCarrito) {
   cargarCarrito();
 }
-

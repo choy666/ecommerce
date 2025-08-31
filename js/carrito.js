@@ -81,12 +81,12 @@ if (finalizarBtn) {
     const fecha = new Date();
     const formatoFecha = fecha.toLocaleDateString('es-AR');
     const formatoHora = fecha.toLocaleTimeString('es-AR');
-    const empresa = "LumenCommerce™";// 📤 nombre del comercio
+    const empresa = "nombrecomercio";// 📤 nombre del comercio
     const direccion = "Catamarca - Capital";
     const telefono = "383-000-0000";// 📤 numero tel del comercio
     const cuit = "10223093481";// 📤 numero de hab del comercio-cuit
 
-    let ticket = ` ${empresa}\n${direccion}\nTel: ${telefono}\nTCuit: ${cuit}\n`;
+    let ticket = ` ${empresa}\n${direccion}\nTel: ${telefono}\nCuit: ${cuit}\n`;
     ticket += `Fecha: ${formatoFecha} - \nHora: ${formatoHora}\n`;
     ticket += `Cliente: Público General\n`;
     ticket += `Ticket #${Math.floor(Math.random() * 1000000).toString().padStart(7, '0')}\n`;

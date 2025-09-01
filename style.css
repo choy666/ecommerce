@@ -179,7 +179,6 @@ footer i {
   transition: all .3s;
 }
 .card img{
-  height: 300px; /* Ajustá según tu diseño */
   object-fit: cover; /* Recorta sin deformar */
   width: 100%; /* Asegura que se adapte al contenedor */
   display: block;
@@ -384,19 +383,12 @@ footer i {
   .card-title{
     font-size: 0.7rem;
   }
-  .card-producto img {
-    min-height: 200px;
-  }
   .flip-img-container {
-      height: 200px;
-  }
-
+  height: 150px;
+}
 }
 @media (max-width: 768px) {
   .ubicacion{
     height: 250px;
-  }
-  .flip-img-container {
-      height: 240px;
   }
 }

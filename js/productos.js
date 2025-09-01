@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     filtrados.forEach(producto => {
       const col = document.createElement('div');
-      col.className = 'col-9 col-md-4 col-lg-3';
+      col.className = 'col-6 col-md-4 col-lg-3 mb-5';
 
       const src = normalizarSrc(producto.imagen);
       const nombre = producto.nombre || 'Producto';

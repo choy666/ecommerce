@@ -1,4 +1,6 @@
-/* ============================🎯 GENERAL STYLES============================= */
+/* ====================================================
+🎯 1) ESTILOS GENERALES
+==================================================== */
 body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #f8f9fa;
@@ -8,7 +10,10 @@ body {
 .color-page{
   color: #ff6f00 !important; /* Cambia este color según tu paleta */
 }
-/* ============================🧭NAVBAR STYLES============================= */
+
+/* ====================================================
+🧭 2) NAVBAR, LOGO, CARRITO Y HAMBURGUESA
+==================================================== */
 /* carrito */
 a[title="carrito"] i.bi-cart-fill {
   transition: color 0.2s ease-in-out;
@@ -20,23 +25,42 @@ a[title="carrito"]:hover i.bi-cart-fill {
 a[title="logo"]:hover img{
   color: #ffa726 !important; /* o cualquier color claro que contraste */
 }
+/* boton hamburguesa */ 
+.navbar-toggler{
+  width: 22px;
+  height: 22px;
+  border: 1px solid #ff6f00;
+}
+.navbar-brand {
+  color: #ff6f00 !important; /* Cambia este color según tu paleta */
+}
+.navbar-brand:hover {
+  color: rgb(255, 255, 255) !important; /* Cambia este color según tu paleta */
+}
+/* Hover sobre el enlace completo */
+.navbar-brand:hover img {
+  transform: scale(1.1);
+  filter: brightness(0) saturate(100%) invert(100%);
+}
+.logo-color {
+  /* Cambia este color según tu paleta */
+  filter: brightness(0) saturate(100%) invert(55%) sepia(90%) saturate(600%) hue-rotate(320deg) brightness(100%) contrast(105%);
+}
+
+/* ====================================================
+☑️ 3) CHECKBOX PERSONALIZADO (Uiverse.io)
+==================================================== */
 /* From Uiverse.io by PriyanshuGupta28 */ 
 .input[type="checkbox"] {
   display: none;
 }
-/* boton hamburguesa */ 
-.navbar-toggler{
-    width: 22px;
-    height: 22px;
-    border: 1px solid #ff6f00;
-}
 .custom-checkbox {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border-radius: 5px;
-    position: relative;
-    cursor: pointer;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
 }
 .custom-checkbox::after {
   content: "";
@@ -53,22 +77,10 @@ a[title="logo"]:hover img{
 .input[type="checkbox"]:checked + .custom-checkbox::after {
   opacity: 1;
 }
-.navbar-brand {
-  color: #ff6f00 !important; /* Cambia este color según tu paleta */
-}
-.navbar-brand:hover {
-  color: rgb(255, 255, 255) !important; /* Cambia este color según tu paleta */
-}
-/* Hover sobre el enlace completo */
-.navbar-brand:hover img {
-   transform: scale(1.1);
-   filter: brightness(0) saturate(100%) invert(100%);
-}
-.logo-color {
-  /* Cambia este color según tu aleta */
-  filter: brightness(0) saturate(100%) invert(55%) sepia(90%) saturate(600%) hue-rotate(320deg) brightness(100%) contrast(105%);
-}
-/* ============================🧱 FOOTER STYLES============================= */
+
+/* ====================================================
+🧱 4) FOOTER Y REDES SOCIALES
+==================================================== */
 .footer-link {
   color: #ff6f00;
   font-size: 1.1rem;
@@ -88,6 +100,54 @@ footer i {
   font-size: 0.8rem;
   color: #c46800 !important;
 }
+/* Estilos minimalistas para el footer */
+.footer {
+  background-color: #111;
+  color: #ccc;
+  text-align: center;
+  padding: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.9rem;
+}
+.footer a {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: 500;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+/* Redes */
+.social-media a {
+  max-width: 50px;
+  text-decoration: none;
+  color: inherit;
+}
+.social-media a:hover{
+  transition: 0.5s;
+  border-radius: 50px;
+  transform: scale(1.5);
+}
+.social-media a svg {
+  max-width: 100%;
+  color: #ff6f00;
+  width: 100%;
+  fill: currentColor;
+}
+.texto-redes {
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  font-weight: 600;
+  color: #ffffff;
+  white-space: nowrap; /* mantiene el texto en una sola línea */
+}
+.admin{
+    width: 50px;
+    border-radius: 2px;
+    margin-right: 5px;
+}
+/* ====================================================
+📍 5) SECCIONES: CARRUSEL, UBICACIÓN, TARJETA UI
+==================================================== */
 .seccion-carrusel {
   margin: 0 auto; /* Centra el carrusel */
   padding: 2rem;
@@ -108,110 +168,56 @@ footer i {
   height: 400px;
   border-radius: 15px;
 }
-/*______Social Media______*/
-.social-media a {
-  max-width: 50px;
-  text-decoration: none;
-  color: inherit;
-}
-.social-media a:hover{
-  transition: 0.5s;
-  border-radius: 50px;
-  transform: scale(1.5);
-}
-.social-media a svg {
-  max-width: 100%;
-  color: #ff6f00;
-  width: 100%;
-  fill: currentColor;
-}
-/* 📱 Estilos específicos para pantallas pequeñas */
-@media (max-width: 425px) {
-  .footer-links {
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    padding-left: 1rem;
-  }
-  .footer-link {
-    justify-content: center;
-    width: 100%;
-    font-size: 1.2rem;
-    padding: 0.5rem 0;
-  }
-  footer i {
-    font-size: 1.4rem;
-  }
-  .ubicacion{
-    height: 150px;
-  }
-  .card img{
-    height: 130px; /* Ajustá según tu diseño */
-  }
-  .card-title{
-    font-size: 0.7rem;
-  }
- .card-producto img {
-  min-height: 200px;
-}
-}
-@media (max-width: 768px) {
-  .ubicacion{
-    height: 250px;
-  }
-}
-/* Estilos minimalistas para el footer */
-.footer {
-  background-color: #111;
-  color: #ccc;
-  text-align: center;
-  padding: 1rem;
-  font-family: 'Segoe UI', sans-serif;
-  font-size: 0.9rem;
-}
-.footer a {
-  color: #ffd700;
-  text-decoration: none;
-  font-weight: 500;
-}
-.footer a:hover {
-  text-decoration: underline;
-}
-.footer i {
-  color: #ffd700;
-  margin-right: 4px;
-}
-/*  */
 
+/* ====================================================
+🃏 6) TARJETAS (BOOTSTRAP CARD OVERRIDES)
+==================================================== */
+/* From Uiverse.io by Codewithvinay */ 
+.card {
+  border-radius: 20px;
+  box-shadow: 13px 10px 20px 0px #afafaf;
+  transition: all .3s;
+}
+.card img{
+  height: 300px; /* Ajustá según tu diseño */
+  object-fit: cover; /* Recorta sin deformar */
+  width: 100%; /* Asegura que se adapte al contenedor */
+  display: block;
+  border-radius: 20px;
+}
+.card-text{
+  font-weight: bolder;
+}
+
+/* ====================================================
+🛍️ 7) CARDS DE PRODUCTO
+==================================================== */
 .card-producto {
   border-radius: 8px;
   text-align: center;
   transition: transform 0.3s ease;
-  
-  
 }
-
 .card-producto:hover {
   transform: scale(1.03);
 }
-
 .card-producto img {
   height: calc(100vw / 2.5); /* Escala con el ancho del viewport */
   max-height: 300px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
-
 .card-producto h3 {
   font-size: 1rem;
   margin: 0.5rem 0;
 }
-
 .card-producto p {
   font-weight: bold;
   color: #ff6f00;
 }
 
+/* ====================================================
+🧃 8) MINICARDS SCROLLABLE
+==================================================== */
 .minicard-scroll {
   padding: 10px;
   padding-top: 50px; /* Espacio para la imagen flotante */
@@ -222,23 +228,21 @@ footer i {
 .minicard-scroll::-webkit-scrollbar {
   display: none;             /* Chrome, Safari y Opera */
 }
-
 .minicard {
   max-width: 300px;
   backdrop-filter: blur(7px);
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 26px;
-  box-shadow: 35px 35px 68px 0px rgba(157, 177, 255, 0.2),inset -8px -8px 16px 0px rgba(157, 177, 255, 0.6),inset 0px 11px 28px 0px rgb(255, 255, 255);
+  box-shadow: 35px 35px 68px 0px rgba(157, 177, 255, 0.2),
+              inset -8px -8px 16px 0px rgba(157, 177, 255, 0.6),
+              inset 0px 11px 28px 0px rgb(255, 255, 255);
 }
-
 .minicard-img {
   padding: 10px;
   position: absolute;
   width: clamp(50px, 20%, 80px);
-
   height: auto;
   border-radius: 50%;
-
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   background: white;
@@ -246,11 +250,9 @@ footer i {
   left: 50%;
   transform: translateX(-50%);
 }
-
 .minicard-img img {
   width: 100%;
 }
-
 .minicard-content {
   padding: 15px;
   margin-top: 10px;
@@ -259,44 +261,19 @@ footer i {
 .minicard-content h3{
   font-size: clamp(0.8rem, 1.5vw, 1rem);
   font-weight: bold;
-
-}.minicard-content h4{
+}
+.minicard-content h4{
   font-size: clamp(0.7rem, 1.3vw, 0.9rem);
 }
 
-.texto-redes {
-  font-size: clamp(1rem, 2.5vw, 2rem);
-  font-weight: 600;
-  color: #ffffff;
-  white-space: nowrap; /* mantiene el texto en una sola línea */
-}
-
-/* From Uiverse.io by Codewithvinay */ 
-.card {
- border-radius: 20px;
- box-shadow: 9px 9px 18px #969696, -20px -20px 60px #ffffff;
- transition: all .3s;
-}
-
-.card img{
-  height: 300px; /* Ajustá según tu diseño */
-  object-fit: cover; /* Recorta sin deformar */
-  width: 100%; /* Asegura que se adapte al contenedor */
-  display: block;
-  border-radius: 20px;
-}
-.card-text{
-  font-weight:bolder
-}
-
-
-
+/* ====================================================
+🔄 9) FLIP CARDS (IMÁGENES REVERSIBLES)
+==================================================== */
 .flip-img-container {
   perspective: 1000px;
   height: 300px;
   position: relative;
 }
-
 .flip-img-inner {
   position: relative;
   width: 100%;
@@ -304,12 +281,10 @@ footer i {
   transition: transform 0.8s;
   transform-style: preserve-3d;
 }
-
 .flip-img-container:hover .flip-img-inner,
 .flip-img-container:active .flip-img-inner {
   transform: rotateY(180deg);
 }
-
 .flip-img-front,
 .flip-img-back {
   position: absolute;
@@ -320,15 +295,12 @@ footer i {
   overflow: hidden;
   box-shadow: 9px 9px 18px #969696, -20px -20px 60px #ffffff;
 }
-
-
 .flip-img-front img {
   height: 100%;
   object-fit: cover;
   width: 100%;
   display: block;
 }
-
 .flip-img-back {
   background-color: #e6e6e6;
   transform: rotateY(180deg);
@@ -338,10 +310,17 @@ footer i {
   align-items: center;
   justify-content: center;
 }
+
+/* ====================================================
+🧩 10) UTILIDADES Y AJUSTES ESPECÍFICOS
+==================================================== */
 #contenedor-productos .btn {
-margin: 0px !important;
+  margin: 0px !important;
 }
 
+/* ====================================================
+🎛️ 11) FILTROS / RADIO GROUP (.mydict) Y FORMS
+==================================================== */
 .mydict div {
   display: flex;
   flex-wrap: wrap;
@@ -361,13 +340,11 @@ margin: 0px !important;
   position: absolute;
   white-space: nowrap;
 }
-
 .mydict input[type="radio"]:checked + span {
   box-shadow: 0 0 0 0.0625em #ff6f00;
   background-color: #ffe7cc;
   z-index: 1;
 }
-
 .mydict label span {
   display: block;
   cursor: pointer;
@@ -380,4 +357,46 @@ margin: 0px !important;
   text-align: center;
   transition: background-color 0.5s ease;
   border-radius: 0.375em;
+}
+
+/* ====================================================
+📱 12) RESPONSIVE
+==================================================== */
+@media (max-width: 425px) {
+  .footer-links {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 1rem;
+  }
+  .footer-link {
+    justify-content: center;
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
+  }
+  footer i {
+    font-size: 1.4rem;
+  }
+  .ubicacion{
+    height: 150px;
+  }
+  .card-title{
+    font-size: 0.7rem;
+  }
+  .card-producto img {
+    min-height: 200px;
+  }
+  .flip-img-container {
+      height: 200px;
+  }
+
+}
+@media (max-width: 768px) {
+  .ubicacion{
+    height: 250px;
+  }
+  .flip-img-container {
+      height: 240px;
+  }
 }

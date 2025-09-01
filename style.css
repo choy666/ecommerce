@@ -140,11 +140,7 @@ footer i {
   color: #ffffff;
   white-space: nowrap; /* mantiene el texto en una sola línea */
 }
-.admin{
-    width: 50px;
-    border-radius: 2px;
-    margin-right: 5px;
-}
+
 /* ====================================================
 📍 5) SECCIONES: CARRUSEL, UBICACIÓN, TARJETA UI
 ==================================================== */
@@ -385,10 +381,36 @@ footer i {
   }
   .flip-img-container {
   height: 150px;
+    .whatsapp-float {
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 0.875rem;
+  }
+  .whatsapp-float svg {
+    width: 24px;
+    height: 24px;
+  }
 }
 }
 @media (max-width: 768px) {
   .ubicacion{
     height: 250px;
   }
+}
+/* ====================================================
+📱 13) links flotantes
+==================================================== */
+.whatsapp-float {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+}
+.whatsapp-float {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.whatsapp-float:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
 }

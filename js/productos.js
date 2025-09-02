@@ -110,6 +110,21 @@ async function init() {
     });
 
     contenedor.appendChild(frag);
+    // 🛍️ Activar toast al agregar producto
+    contenedor.addEventListener('click', function (e) {
+      const btn = e.target.closest('.agregar-carrito');
+      if (!btn) return;
+      e.preventDefault();
+
+      const toast = document.getElementById('toast');
+      if (toast) {
+        toast.textContent = `${btn.dataset.nombre} agregado al carrito 🛍️`;
+        toast.style.display = 'block';
+        setTimeout(() => {
+          toast.style.display = 'none';
+        }, 2000);
+      }
+    });
   }
 }
 

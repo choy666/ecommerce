@@ -4,44 +4,43 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Productos</title>
-    <link rel="icon" href="../img/favicon.svg" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css">
+  <link rel="icon" href="../img/favicon.svg" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
-  <!-- 🔝 Navbar (reutilizada de index.html) -->
-    <nav class="navbar navbar-expand-lg bg-dark px-3" data-bs-theme="dark" id="inicio">
-      <!-- Logo -->
-      <a class="navbar-brand " href="productos.html">
-        <img src="/img/favicon.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top logo-color">
-        PRODUCTOS
-      </a>
-      <!-- Carrito siempre a la derecha -->
-      <div class="d-flex align-items-center ms-auto order-lg-2">
-        <!-- Botón carrito -->
-        <button class="btn position-relative color-page" title="carrito" data-bs-toggle="offcanvas" data-bs-target="#carritoPanel">
-          <i class="bi bi-cart-fill fs-4"></i>
-          <span id="contadorCarrito" class="position-absolute top-0 start-85 translate-middle badge rounded-pill bg-danger">0</span>
-        </button>
-        <button class="navbar-toggler p-0 order-lg-1 " type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-          <label>
-            <input type="checkbox" class="input">
-            <span class="custom-checkbox"></span>
-          </label>
-        </button>
-      </div>
-      <!-- Menú colapsable -->
-      <div class="collapse navbar-collapse order-lg-0" id="navbarContent">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link nav-tabs color-page" href="./productos.html">Productos</a></li>
-          <li class="nav-item"><a class="nav-link " href="../index.html#redes">Contacto</a></li>
-        </ul>
-      </div>
+  <!-- 🔝 Navbar -->
+    <nav class="navbar navbar-expand-lg bg-dark px-3 m" data-bs-theme="dark" id="inicio">
+        <!-- Logo -->
+        <a class="navbar-brand " href="/index.html">
+            <img src="/img/favicon.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top logo-color">
+        INICIO
+        </a>
+        <!-- Carrito siempre a la derecha -->
+        <div class="d-flex align-items-center ms-auto order-lg-2">
+            <!-- Botón carrito -->
+            <button class="btn position-relative color-page" title="carrito" data-bs-toggle="offcanvas" data-bs-target="#carritoPanel">
+            <i class="bi bi-cart-fill fs-4"></i>
+            <span id="contadorCarrito" class="position-absolute top-0 start-85 translate-middle badge rounded-pill bg-danger">0</span>
+            </button>
+            <button class="navbar-toggler p-0 order-lg-1 " type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <label>
+                    <input type="checkbox" class="input">
+                    <span class="custom-checkbox"></span>
+                </label>
+            </button>
+        </div>
+        <!-- Menú colapsable -->
+        <div class="collapse navbar-collapse order-lg-0" id="navbarContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link nav-tabs color-page" href="./productos.html">Productos</a></li>
+                <li class="nav-item"><a class="nav-link" href="../index.html#redes">Contacto</a></li>
+            </ul>
+        </div>
     </nav>
-    <main class="container p-4">
+  <main class="container py-4">
       <!-- 🛍️ btn wsp del comercio -->
       <a
         href="https://wa.link/vrwr81"
@@ -69,75 +68,63 @@
       >
         <img src="../img/mingolla3.svg" width="32" height="32">
       </a>
-      <!-- 🛍️ Filtros de productos -->
-      <div class="container mb-4">
-        <div class="mydict">
-          <div id="filtroCategoriaContainer">
-            <!-- Se llenará dinámicamente con botones -->
-          </div>
-          <div class="form-check form-switch mt-3 text-center">
-            <input class="form-check-input" type="checkbox" id="filtroDestacado">
-            <label class="form-check-label text-creador" for="filtroDestacado">
-              <h3 class="text-black">Solo destacados</h3>
-            </label>
-          </div>
+    <!-- 🛍️ Filtros de productos  -->
+    <div class="container mb-4">
+      <div class="mydict">
+        <div id="filtroCategoriaContainer"></div>
+        <div class="form-check form-switch mt-3 text-center">
+          <input class="form-check-input" type="checkbox" id="filtroDestacado">
+          <label class="form-check-label text-creador" for="filtroDestacado">
+            <h3 class="text-black">Solo destacados</h3>
+          </label>
         </div>
-      </div>
-      <!-- 🛍️ Sección de productos -->
-      <h2 class="text-center color-page">Nuestros Productos</h2>
-      <div class="row justify-content-center mt-1" id="contenedor-productos"></div>
-      </div>
-    </main>
-    <!-- 🔻 Footer  -->
-    <footer class="bg-dark text-light py-4 mt-5 border-top">
-        <div class="container">
-            <div class="text-center">
-                <small class="text-secondary">© 2025 -- Nombre --.</small>
-            </div>
-            <div class="footer-links d-flex flex-wrap justify-content-center gap-3">
-            <a href="./index.html#inicio" class="footer-link">
-                <i class="bi bi-house-fill"></i> Inicio
-            </a>
-            <a href="./index.html#redes" class="footer-link">
-                <i class="bi bi-geo-alt-fill"></i> Ubicación
-            </a>
-            <a href="./index.html#redes" class="footer-link">
-                <i class="bi bi-people-fill"></i> Redes Sociales
-            </a>
-            </div>
-            <div class="footer mt-3">
-                <p>¿Querés vender tus productos online?
-                  <a href="https://api.whatsapp.com/send?phone=5493834046923&text=Hola%2C%20me%20interesa%20sumarme%20a%20la%20comunidad%20de%20LumenCommerce%20🌟🤝✨" target="_blank" rel="noopener">
-                    Sumate a nuestra comunidad <i class="bi bi-shield-lock-fill"></i>
-                  </a>
-                </p>
-                <small>
-                  © 2025 LumenCommerce. Todos los derechos reservados.
-                </small>
-            </div>
-        </div>
-    </footer>
-    <!-- 🛒 Panel Offcanvas del Carrito -->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="carritoPanel" aria-labelledby="carritoLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title color-page" id="carritoLabel">Tu Carrito</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
-      </div>
-      <div class="offcanvas-body">
-        <ul id="carritoLista" class="list-group mb-3">
-          <!-- Productos agregados aparecerán aquí -->
-        </ul>
-        <div class="d-flex justify-content-between align-items-center">
-          <strong>Total:</strong>
-          <span id="carritoTotal" class="color-page">$0</span>
-        </div>
-        <button class="btn btn-dark mt-3 w-100">Finalizar Compra</button>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/js/splide.min.js"></script>
-    <script src="../js/carrusel.js"></script>
-    <script src="../js/carrito.js"></script>
-    <script src="../js/productos.js"></script>
+    <!-- 🛍️ Productos -->
+    <h2 class="text-center color-page">Nuestros Productos</h2>
+    <div class="row justify-content-center mt-1" id="contenedor-productos" data-source="GoogleSheets-LumenCommerce"></div>
+  </main>
+  <!-- 🛒 Carrito -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="carritoPanel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title color-page">Tu Carrito</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul id="carritoLista" class="list-group mb-3"></ul>
+      <div class="d-flex justify-content-between">
+        <strong>Total:</strong>
+        <span id="carritoTotal" class="color-page">$0</span>
+      </div>
+      <button class="btn btn-dark w-100 mt-3">Finalizar Compra</button>
+    </div>
+  </div>
+  <!-- 🔻 Footer -->
+  <footer class="bg-dark text-light py-4 mt-5 border-top">
+    <div class="container text-center">
+      <small class="text-secondary">© 2025 LumenCommerce.</small>
+      <div class="footer-links d-flex flex-wrap justify-content-center gap-3 mt-2">
+        <a href="../index.html#inicio" class="footer-link"><i class="bi bi-house-fill"></i> Inicio</a>
+        <a href="../index.html#redes" class="footer-link"><i class="bi bi-geo-alt-fill"></i> Ubicación</a>
+        <a href="../index.html#redes" class="footer-link"><i class="bi bi-people-fill"></i> Redes Sociales</a>
+      </div>
+      <div class="footer mt-3">
+        <p>¿Querés vender tus productos online?
+          <a href="https://api.whatsapp.com/send?phone=5493834046923&text=Hola%2C%20me%20interesa%20sumarme%20a%20la%20comunidad%20de%20LumenCommerce%20🌟🤝✨" target="_blank" rel="noopener">
+            Sumate a nuestra comunidad <i class="bi bi-shield-lock-fill"></i>
+          </a>
+        </p>
+        <small>© 2025 LumenCommerce. Todos los derechos reservados.</small>
+      </div>
+    </div>
+  </footer>
+  <!-- 🧠 Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/carrito.js"></script>
+  <script src="../js/productos.js"></script>
+  <!-- 🎉 Toast -->
+  <div id="toast" class="position-fixed bottom-0 end-0 bg-success text-white rounded px-3 py-2 shadow" style="z-index:1080; display:none;">
+    Producto agregado al carrito 🛍️
+  </div>
 </body>
 </html>

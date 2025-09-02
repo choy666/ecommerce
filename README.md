@@ -16,10 +16,10 @@ Una tienda online modular, sin base de datos, que utiliza **Google Sheets como b
 ---
 
 ## 🗂 Estructura del proyecto
-📁 pages/ → Páginas HTML del sitio (inicio, productos, etc.)
-📁 js/ → Scripts para parser CSV, carrito, animaciones 
-📁 img/ → Imágenes del catálogo 
-📁 data/ → CSV de ejemplo para testeo local
+- 📁 pages/ → Páginas HTML del sitio (inicio, productos, etc.)
+- 📁 js/ → Scripts para parser CSV, carrito, animaciones 
+- 📁 img/ → Imágenes del catálogo 
+- 📁 data/ → CSV de ejemplo para testeo local
 
 ---
 

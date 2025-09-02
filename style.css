@@ -424,3 +424,6 @@ footer i {
 .icono-agregar.animado {
   animation: pulse 0.4s ease;
 }
+.logo-usuario{
+margin-top: 32px;
+}

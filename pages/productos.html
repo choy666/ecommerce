@@ -11,35 +11,38 @@
 </head>
 <body>
   <!-- 🔝 Navbar -->
-    <nav class="navbar navbar-expand-lg bg-dark px-3 m" data-bs-theme="dark" id="inicio">
-        <!-- Logo -->
-        <a class="navbar-brand " href="/index.html">
-            <img src="/img/favicon.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top logo-color">
-        INICIO
-        </a>
-        <!-- Carrito siempre a la derecha -->
-        <div class="d-flex align-items-center ms-auto order-lg-2">
-            <!-- Botón carrito -->
-            <button class="btn position-relative color-page" title="carrito" data-bs-toggle="offcanvas" data-bs-target="#carritoPanel">
-            <i class="bi bi-cart-fill fs-4"></i>
-            <span id="contadorCarrito" class="position-absolute top-0 start-85 translate-middle badge rounded-pill bg-danger">0</span>
-            </button>
-            <button class="navbar-toggler p-0 order-lg-1 " type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-                <label>
-                    <input type="checkbox" class="input">
-                    <span class="custom-checkbox"></span>
-                </label>
-            </button>
-        </div>
-        <!-- Menú colapsable -->
-        <div class="collapse navbar-collapse order-lg-0" id="navbarContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link nav-tabs color-page" href="./productos.html">Productos</a></li>
-                <li class="nav-item"><a class="nav-link" href="../index.html#redes">Contacto</a></li>
-            </ul>
-        </div>
-    </nav>
+  <nav class="navbar navbar-expand-lg bg-dark px-3" data-bs-theme="dark" id="inicio">
+    <!-- Logo -->
+    <a class="navbar-brand d-flex align-items-center" href="/index.html">
+        <img src="/img/favicon.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top logo-color">
+        <span class="ms-2">INICIO</span>
+    </a>
+    <!-- Contenedor usuario -->
+    <div class="position-absolute top-0 start-50 translate-middle logo-usuario">
+      <small class="text-secondary">LumenCommerce</small>
+    </div>
+    <!-- Carrito siempre a la derecha -->
+    <div class="d-flex align-items-center ms-auto order-lg-2">
+      <button class="btn position-relative color-page" title="carrito" data-bs-toggle="offcanvas" data-bs-target="#carritoPanel">
+        <i class="bi bi-cart-fill fs-4"></i>
+        <span id="contadorCarrito" class="position-absolute top-0 start-85 translate-middle badge rounded-pill bg-danger">0</span>
+      </button>
+      <button class="navbar-toggler p-0 order-lg-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <label>
+          <input type="checkbox" class="input">
+            <span class="custom-checkbox"></span>
+        </label>
+      </button>
+    </div>
+    <!-- Menú colapsable -->
+    <div class="collapse navbar-collapse order-lg-0" id="navbarContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link nav-tabs color-page" href="./productos.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#redes">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
   <main class="container py-4">
       <!-- 🛍️ btn wsp del comercio -->
       <a

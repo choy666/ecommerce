@@ -4,123 +4,124 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Productos</title>
-  <link rel="icon" href="../img/favicon.svg" type="image/x-icon">
+  <link rel="icon" href="../img/mingolla3.svg" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
-  <!-- 🔝 Navbar -->
-  <nav class="navbar navbar-expand-lg bg-dark px-3" data-bs-theme="dark" id="inicio">
-    <!-- Logo -->
-    <a class="navbar-brand d-flex align-items-center" href="/index.html">
-        <img src="/img/favicon.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top logo-color">
-        <span class="ms-2">INICIO</span>
-    </a>
-    <!-- Contenedor usuario -->
-    <div class="position-absolute top-0 start-50 translate-middle logo-usuario">
-      <small class="text-secondary">LumenCommerce</small>
-    </div>
-    <!-- Carrito siempre a la derecha -->
-    <div class="d-flex align-items-center ms-auto order-lg-2">
-      <button class="btn position-relative color-page" title="carrito" data-bs-toggle="offcanvas" data-bs-target="#carritoPanel">
-        <i class="bi bi-cart-fill fs-4"></i>
-        <span id="contadorCarrito" class="position-absolute top-0 start-85 translate-middle badge rounded-pill bg-danger">0</span>
-      </button>
-      <button class="navbar-toggler p-0 order-lg-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-        <label>
-          <input type="checkbox" class="input">
-            <span class="custom-checkbox"></span>
-        </label>
-      </button>
-    </div>
-    <!-- Menú colapsable -->
-    <div class="collapse navbar-collapse order-lg-0" id="navbarContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link nav-tabs color-page" href="./productos.html">Productos</a></li>
-          <li class="nav-item"><a class="nav-link" href="../index.html#redes">Contacto</a></li>
-      </ul>
-    </div>
-  </nav>
-  <main class="container py-4">
-      <!-- 🛍️ btn wsp del comercio -->
-      <a
-        href="https://wa.link/vrwr81"
-        class="position-fixed start-0 bottom-0 ms-3 mb-3 z-3 rounded-circle d-flex align-items-center justify-content-center bg-success text-white shadow-lg whatsapp-float"
-        style="width:64px; height:64px;"
-        target="_blank"
-        rel="noopener"
-        aria-label="Chatear por WhatsApp"
-        title="¿Necesitás ayuda? 😊"
-      >
-      <!-- SVG de WhatsApp (Bootstrap Icons, inline) -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">          <path d="M13.601 2.326A7.936 7.936 0 0 0 8.013 0C3.588 0 .037 3.548.037 7.93c0 1.397.366 2.755 1.062 3.947L0 16l4.2-1.098a7.93 7.93 0 0 0 3.813.973h.003c4.425 0 7.976-3.548 7.976-7.93a7.89 7.89 0 0 0-2.391-5.619zM8.016 14.51a6.6 6.6 0 0 1-3.366-.92l-.241-.144-2.498.652.667-2.435-.157-.25a6.53 6.53 0 0 1-1.005-3.51c0-3.617 2.949-6.56 6.577-6.56a6.52 6.52 0 0 1 4.664 1.93 6.49 6.49 0 0 1 1.917 4.632c0 3.617-2.949 6.56-6.558 6.56z"/>
-          <path d="M11.533 9.797c-.2-.1-1.18-.58-1.362-.646-.182-.067-.316-.1-.45.1-.133.2-.516.646-.633.78-.116.133-.233.15-.433.05-.2-.1-.842-.31-1.603-.99-.592-.527-.992-1.175-1.108-1.375-.116-.2-.012-.308.088-.408.092-.092.2-.24.3-.36.1-.12.133-.2.2-.333.067-.133.035-.25-.017-.35-.05-.1-.45-1.085-.616-1.485-.162-.39-.325-.335-.45-.34l-.383-.007a.74.74 0 0 0-.533.25c-.183.2-.7.69-.7 1.68s.716 1.95.816 2.09c.1.133 1.408 2.15 3.413 3.01.478.206.85.33 1.14.423.478.152.913.13 1.257.079.383-.057 1.18-.482 1.346-.947.166-.465.166-.864.116-.947-.05-.083-.183-.133-.383-.233z"/>
-        </svg>
-      </a>
-      <!-- 🛍️ btn mingolla del admin -->
-      <a
-        href="https://wa.link/vrwr81"
-        class="position-fixed end-0 bottom-0 ms-3 mb-3 z-3 rounded-circle d-flex align-items-center justify-content-center bg-white text-white shadow-lg whatsapp-float"
-        style="width:64px; height:64px;"
-        target="_blank"
-        rel="noopener"
-        aria-label="Chatear por WhatsApp"
-        title="Quiero unirme🙌"
-      >
-        <img src="../img/mingolla3.svg" width="32" height="32">
-      </a>
-    <!-- 🛍️ Filtros de productos  -->
-    <div class="container mb-4">
-      <div class="mydict">
-        <div id="filtroCategoriaContainer"></div>
-        <div class="form-check form-switch mt-3 text-center">
-          <input class="form-check-input" type="checkbox" id="filtroDestacado">
-          <label class="form-check-label text-creador" for="filtroDestacado">
-            <h3 class="text-black">Solo destacados</h3>
+  <div class="layout">
+    <!-- 🔝 Navbar -->
+    <nav class="navbar navbar-expand-lg bg-dark px-3" data-bs-theme="dark" id="inicio">
+      <!-- Logo -->
+            <a class="navbar-brand color-page" href="../index.html">
+                <i class="bi bi-house-fill"></i> INICIO
+            </a>
+      <!-- Contenedor usuario -->
+      <div class="position-absolute top-0 start-50 translate-middle logo-usuario">
+        <small class="text-secondary">LumenCommerce</small>
+      </div>
+      <!-- Carrito siempre a la derecha -->
+      <div class="d-flex align-items-center ms-auto order-lg-2">
+        <button class="btn position-relative color-page" title="carrito" data-bs-toggle="offcanvas" data-bs-target="#carritoPanel">
+          <i class="bi bi-cart-fill fs-4"></i>
+          <span id="contadorCarrito" class="position-absolute top-0 start-85 translate-middle badge rounded-pill bg-danger">0</span>
+        </button>
+        <button class="navbar-toggler p-0 order-lg-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+          <label>
+            <input type="checkbox" class="input">
+              <span class="custom-checkbox"></span>
           </label>
+        </button>
+      </div>
+      <!-- Menú colapsable -->
+      <div class="collapse navbar-collapse order-lg-0" id="navbarContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link nav-tabs color-page" href="./productos.html">Productos</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#redes">Contacto</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main class="container py-4">
+        <!-- 🛍️ btn wsp del comercio -->
+        <a
+          href="https://wa.link/vrwr81"
+          class="position-fixed start-0 bottom-0 ms-3 mb-3 z-3 rounded-circle d-flex align-items-center justify-content-center bg-success text-white shadow-lg whatsapp-float"
+          style="width:64px; height:64px;"
+          target="_blank"
+          rel="noopener"
+          aria-label="Chatear por WhatsApp"
+          title="¿Necesitás ayuda? 😊"
+        >
+        <!-- SVG de WhatsApp (Bootstrap Icons, inline) -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">          <path d="M13.601 2.326A7.936 7.936 0 0 0 8.013 0C3.588 0 .037 3.548.037 7.93c0 1.397.366 2.755 1.062 3.947L0 16l4.2-1.098a7.93 7.93 0 0 0 3.813.973h.003c4.425 0 7.976-3.548 7.976-7.93a7.89 7.89 0 0 0-2.391-5.619zM8.016 14.51a6.6 6.6 0 0 1-3.366-.92l-.241-.144-2.498.652.667-2.435-.157-.25a6.53 6.53 0 0 1-1.005-3.51c0-3.617 2.949-6.56 6.577-6.56a6.52 6.52 0 0 1 4.664 1.93 6.49 6.49 0 0 1 1.917 4.632c0 3.617-2.949 6.56-6.558 6.56z"/>
+            <path d="M11.533 9.797c-.2-.1-1.18-.58-1.362-.646-.182-.067-.316-.1-.45.1-.133.2-.516.646-.633.78-.116.133-.233.15-.433.05-.2-.1-.842-.31-1.603-.99-.592-.527-.992-1.175-1.108-1.375-.116-.2-.012-.308.088-.408.092-.092.2-.24.3-.36.1-.12.133-.2.2-.333.067-.133.035-.25-.017-.35-.05-.1-.45-1.085-.616-1.485-.162-.39-.325-.335-.45-.34l-.383-.007a.74.74 0 0 0-.533.25c-.183.2-.7.69-.7 1.68s.716 1.95.816 2.09c.1.133 1.408 2.15 3.413 3.01.478.206.85.33 1.14.423.478.152.913.13 1.257.079.383-.057 1.18-.482 1.346-.947.166-.465.166-.864.116-.947-.05-.083-.183-.133-.383-.233z"/>
+          </svg>
+        </a>
+        <!-- 🛍️ btn mingolla del admin -->
+        <a
+          href="https://wa.link/vrwr81"
+          class="position-fixed end-0 bottom-0 ms-3 mb-3 z-3 rounded-circle d-flex align-items-center justify-content-center bg-white text-white shadow-lg whatsapp-float"
+          style="width:64px; height:64px;"
+          target="_blank"
+          rel="noopener"
+          aria-label="Chatear por WhatsApp"
+          title="Quiero unirme🙌"
+        >
+          <img src="../img/mingolla3.svg" width="32" height="32">
+        </a>
+      <!-- 🛍️ Filtros de productos  -->
+      <div class="container mb-4">
+        <div class="mydict">
+          <div id="filtroCategoriaContainer"></div>
+          <div class="form-check form-switch mt-3 text-center">
+            <input class="form-check-input" type="checkbox" id="filtroDestacado">
+            <label class="form-check-label text-creador" for="filtroDestacado">
+              <h3 class="text-black">Solo destacados</h3>
+            </label>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- 🛍️ Productos -->
-    <h2 class="text-center color-page">Nuestros Productos</h2>
-    <div class="row justify-content-center mt-1" id="contenedor-productos" data-source="GoogleSheets-LumenCommerce"></div>
-  </main>
-  <!-- 🛒 Carrito -->
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="carritoPanel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title color-page">Tu Carrito</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-    </div>
-    <div class="offcanvas-body">
-      <ul id="carritoLista" class="list-group mb-3"></ul>
-      <div class="d-flex justify-content-between">
-        <strong>Total:</strong>
-        <span id="carritoTotal" class="color-page">$0</span>
+      <!-- 🛍️ Productos -->
+      <h2 class="text-center color-page">Nuestros Productos</h2>
+      <div class="row justify-content-center mt-1" id="contenedor-productos" data-source="GoogleSheets-LumenCommerce"></div>
+    </main>
+    <!-- 🛒 Carrito -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="carritoPanel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title color-page">Tu Carrito</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
       </div>
-      <button class="btn btn-dark w-100 mt-3">Finalizar Compra</button>
+      <div class="offcanvas-body">
+        <ul id="carritoLista" class="list-group mb-3"></ul>
+        <div class="d-flex justify-content-between">
+          <strong>Total:</strong>
+          <span id="carritoTotal" class="color-page">$0</span>
+        </div>
+        <button class="btn btn-dark w-100 mt-3">Finalizar Compra</button>
+      </div>
     </div>
+    <!-- 🔻 Footer -->
+    <footer class="bg-dark text-light py-4 mt-5 border-top">
+      <div class="container text-center">
+        <small class="text-secondary">© 2025 LumenCommerce.</small>
+        <div class="footer-links d-flex flex-wrap justify-content-center gap-3 mt-2">
+          <a href="../index.html#inicio" class="footer-link color-page"><i class="bi bi-house-fill"></i> Inicio</a>
+          <a href="../index.html#redes" class="footer-link color-page"><i class="bi bi-geo-alt-fill"></i> Ubicación</a>
+          <a href="../index.html#redes" class="footer-link color-page"><i class="bi bi-people-fill "></i> Redes Sociales</a>
+        </div>
+        <div class="footer mt-3">
+          <p>¿Querés vender tus productos online?
+            <a href="https://api.whatsapp.com/send?phone=5493834046923&text=Hola%2C%20me%20interesa%20sumarme%20a%20la%20comunidad%20de%20LumenCommerce%20🌟🤝✨" target="_blank" rel="noopener">
+              Sumate a nuestra comunidad <i class="bi bi-shield-lock-fill"></i>
+            </a>
+          </p>
+          <small>© 2025 LumenCommerce. Todos los derechos reservados.</small>
+        </div>
+      </div>
+    </footer>
   </div>
-  <!-- 🔻 Footer -->
-  <footer class="bg-dark text-light py-4 mt-5 border-top">
-    <div class="container text-center">
-      <small class="text-secondary">© 2025 LumenCommerce.</small>
-      <div class="footer-links d-flex flex-wrap justify-content-center gap-3 mt-2">
-        <a href="../index.html#inicio" class="footer-link"><i class="bi bi-house-fill"></i> Inicio</a>
-        <a href="../index.html#redes" class="footer-link"><i class="bi bi-geo-alt-fill"></i> Ubicación</a>
-        <a href="../index.html#redes" class="footer-link"><i class="bi bi-people-fill"></i> Redes Sociales</a>
-      </div>
-      <div class="footer mt-3">
-        <p>¿Querés vender tus productos online?
-          <a href="https://api.whatsapp.com/send?phone=5493834046923&text=Hola%2C%20me%20interesa%20sumarme%20a%20la%20comunidad%20de%20LumenCommerce%20🌟🤝✨" target="_blank" rel="noopener">
-            Sumate a nuestra comunidad <i class="bi bi-shield-lock-fill"></i>
-          </a>
-        </p>
-        <small>© 2025 LumenCommerce. Todos los derechos reservados.</small>
-      </div>
-    </div>
-  </footer>
   <!-- 🧠 Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../js/carrito.js"></script>

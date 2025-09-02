@@ -1,56 +1,40 @@
 /* ====================================================
 🎯 1) ESTILOS GENERALES
 ==================================================== */
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f8f9fa;
-  margin: 0;
-  padding: 0;
-}
 .color-page{
-  color: #ff6f00 !important; /* Cambia este color según tu paleta */
+  color: #ff7b00 !important; /* Cambia este color según tu paleta */
 }
-
-/* ====================================================
-🧭 2) NAVBAR, LOGO, CARRITO Y HAMBURGUESA
-==================================================== */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* clave para ocupar toda la pantalla */
+}
+main {
+  flex: 1; /* empuja el footer hacia abajo */
+}
 /* carrito */
-a[title="carrito"] i.bi-cart-fill {
-  transition: color 0.2s ease-in-out;
+.bi-cart-fill, .navbar-brand, .footer-link {
+  transition: color 0.4s ease-in-out;
 }
-a[title="carrito"]:hover i.bi-cart-fill {
+.bi-cart-fill:hover, .navbar-brand:hover, .footer-link:hover {
   color: #ffffff !important; /* o cualquier color claro que contraste */
 }
-/* logo */
-a[title="logo"]:hover img{
-  color: #ffa726 !important; /* o cualquier color claro que contraste */
+a {
+  text-decoration: none !important; /* elimina subrayado */
 }
+/* ====================================================
+🧭 2) NAVBAR, LOGO, CARRITO y HAMBURGUESA
+==================================================== */
 /* boton hamburguesa */ 
 .navbar-toggler{
   width: 22px;
   height: 22px;
-  border: 1px solid #ff6f00;
+  border: 1px solid #ff0000;
 }
-.navbar-brand {
-  color: #ff6f00 !important; /* Cambia este color según tu paleta */
-}
-.navbar-brand:hover {
-  color: rgb(255, 255, 255) !important; /* Cambia este color según tu paleta */
-}
-/* Hover sobre el enlace completo */
-.navbar-brand:hover img {
-  transform: scale(1.1);
-  filter: brightness(0) saturate(100%) invert(100%);
-}
-.logo-color {
-  /* Cambia este color según tu paleta */
-  filter: brightness(0) saturate(100%) invert(55%) sepia(90%) saturate(600%) hue-rotate(320deg) brightness(100%) contrast(105%);
-}
-
-/* ====================================================
-☑️ 3) CHECKBOX PERSONALIZADO (Uiverse.io)
-==================================================== */
-/* From Uiverse.io by PriyanshuGupta28 */ 
 .input[type="checkbox"] {
   display: none;
 }
@@ -70,36 +54,16 @@ a[title="logo"]:hover img{
   transform: translate(-50%, -50%);
   width: 10px;
   height: 10px;
-  background-color: #ff6f00; /* Cambia este color según tu paleta */
+  background-color: #ff0000; /* Cambia este color según tu paleta */
   border-radius: 3px;
   opacity: 0;
 }
 .input[type="checkbox"]:checked + .custom-checkbox::after {
   opacity: 1;
 }
-
 /* ====================================================
 🧱 4) FOOTER Y REDES SOCIALES
 ==================================================== */
-.footer-link {
-  color: #ff6f00;
-  font-size: 1.1rem;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: color 0.3s ease;
-}
-.footer-link:hover {
-  color: #ffffff;
-}
-footer i {
-  font-size: 1.3rem;
-}
-.text-creador {
-  font-size: 0.8rem;
-  color: #c46800 !important;
-}
 /* Estilos minimalistas para el footer */
 .footer {
   background-color: #111;
@@ -115,32 +79,28 @@ footer i {
   font-weight: 500;
 }
 .footer a:hover {
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 /* Redes */
 .social-media a {
   max-width: 50px;
-  text-decoration: none;
   color: inherit;
 }
 .social-media a:hover{
   transition: 0.5s;
-  border-radius: 50px;
   transform: scale(1.5);
+  color: white;
 }
 .social-media a svg {
   max-width: 100%;
-  color: #ff6f00;
   width: 100%;
   fill: currentColor;
 }
 .texto-redes {
   font-size: clamp(1rem, 2.5vw, 2rem);
   font-weight: 600;
-  color: #ffffff;
   white-space: nowrap; /* mantiene el texto en una sola línea */
 }
-
 /* ====================================================
 📍 5) SECCIONES: CARRUSEL, UBICACIÓN, TARJETA UI
 ==================================================== */
@@ -337,7 +297,8 @@ footer i {
 }
 .mydict input[type="radio"]:checked + span {
   box-shadow: 0 0 0 0.0625em #ff6f00;
-  background-color: #ffe7cc;
+  background-color: #000000;
+  color: white;
   z-index: 1;
 }
 .mydict label span {
@@ -348,12 +309,11 @@ footer i {
   margin-left: 0.0625em;
   box-shadow: 0 0 0 0.0625em #b5bfd9;
   letter-spacing: 0.05em;
-  color: #3e4963;
+  color: #000000;
   text-align: center;
   transition: background-color 0.5s ease;
   border-radius: 0.375em;
 }
-
 /* ====================================================
 📱 12) RESPONSIVE
 ==================================================== */

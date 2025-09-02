@@ -21,17 +21,15 @@ document.addEventListener('DOMContentLoaded', async function () {
     destacados.forEach(producto => {
       const li = document.createElement('li');
       li.className = 'splide__slide';
-
       const imagen = normalizarSrc(producto.imagen);
       const nombre = producto.nombre || 'Producto';
       const precio = Number(producto.precio || 0).toLocaleString('es-AR');
-
       li.innerHTML = `
         <a href="pages/productos.html" class="text-decoration-none text-dark">
           <div class="card-producto">
             <img src="${imagen}" alt="${nombre}" onerror="this.src='../img/placeholder.jpeg'">
             <h3>${nombre}</h3>
-            <p>$${precio}</p>
+            <p class="color-page">$${precio}</p>
           </div>
         </a>
       `;

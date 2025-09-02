@@ -34,11 +34,11 @@ async function init() {
       throw new Error('CSV vacío o ilegible');
     }
 
+
     productos = filas.map((r) => {
       const precio = parsePrecioAR(r.precio ?? r.precioars ?? r.precio$);
       return {
-        nombre: (r.nombre ?? r.titulo ?? 'Producto').trim(),
-        precio,
+        nombre: (r.nombre ?? r.titulo ?? 'Producto').trim(),precio,
         imagen: normalizarImagen(r.imagen ?? r.foto ?? r.imagenurl),
         descripcion: (r.descripcion ?? r.descripcioncorta ?? '').trim(),
         categoria: (r.categoria ?? r.rubro ?? '').trim(),
@@ -209,9 +209,14 @@ function parsePrecioAR(v) {
 
 function formatearARS(n) {
   try {
-    return new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS', maximumFractionDigits: 2 }).format(n || 0);
+    return new Intl.NumberFormat('es-AR', {
+      style: 'currency',
+      currency: 'ARS',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0
+    }).format(n || 0);
   } catch {
-    return `$${(n || 0).toFixed(2)}`;
+    return `$${Math.round(n || 0)}`;
   }
 }
 
@@ -247,16 +252,13 @@ function escapeHTML(s) {
 
 function crearRadiosCategorias(categorias) {
   if (categorias.length === 0) return '';
-
   let html = `<div class="mydict"><div>`;
-
   html += `
     <label>
       <input type="radio" name="categoria" id="cat-todas" value="">
       <span>Todas</span>
     </label>
   `;
-
   categorias.forEach((cat, i) => {
     const id = `cat-${i}`;
     html += `
@@ -266,7 +268,6 @@ function crearRadiosCategorias(categorias) {
       </label>
     `;
   });
-
   html += `</div></div>`;
   return html;
 }

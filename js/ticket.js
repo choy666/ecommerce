@@ -5,7 +5,6 @@ const GOOGLE_SHEET_CSV_URL =
 document.addEventListener('DOMContentLoaded', init);
 async function init() {
   const contenedor = document.getElementById('contenedor-productos');
-  const filtroDestacado = document.getElementById('filtroDestacado');
   const filtroContainer = document.getElementById('filtroCategoriaContainer');
   if (!contenedor) return;
   contenedor.innerHTML = `
@@ -52,12 +51,10 @@ async function init() {
     Number.isInteger(p.stock) && p.stock > 0
   );
     const categorias = [...new Set(productos.map(p => p.categoria).filter(Boolean))].sort();
-
     if (filtroContainer) {
       filtroContainer.innerHTML = crearRadiosCategorias(categorias);
       filtroContainer.addEventListener('change', render);
     }
-    filtroDestacado?.addEventListener('change', render);
     render();
   } catch (err) {
     console.error('Error al cargar productos:', err);
@@ -65,12 +62,9 @@ async function init() {
   }
   function render() {
     const categoria = document.querySelector('input[name="categoria"]:checked')?.value || '';
-    const soloDestacados = !!filtroDestacado?.checked;
-
     const filtrados = productos
       .filter(p => p.stock > 0)
       .filter(p => !categoria || p.categoria === categoria);
-
     if (filtrados.length === 0) {
       contenedor.innerHTML = `<p class="text-muted text-center my-5">No hay productos que coincidan con los filtros.</p>`;
       return;
@@ -82,19 +76,10 @@ async function init() {
       col.className = 'col-6 col-md-4 col-lg-3 mb-4';
       col.innerHTML = `
         <div class="card clay-card h-100 text-center p-3">
-          <div class="flip-img-container mb-3" role="button" aria-label="Ver detalle">
-            <div class="flip-img-inner">
-              <div class="flip-img-front">
-                <img src="${escapeHTML(p.imagen)}" class="img-fluid rounded" alt="${escapeHTML(p.nombre)}">
-              </div>
-              <div class="flip-img-back d-flex align-items-center justify-content-center flex-column">
-                <p class="small px-2 mb-0">${escapeHTML(p.descripcion || 'Sin descripción disponible.')}</p>
-                <p class="small color-page position-absolute top-100 start-50 card-stock">${escapeHTML('Stock: ' + p.stock)}</p>
-              </div>
-            </div>
-          </div>
           <div class="card-body">
             <h5 class="card-title titulo-producto mb-1">${escapeHTML(p.nombre)}</h5>
+            <h5 class="text-secondary mb-1">${escapeHTML('Stock: ' + p.stock)}</h5>
+            <h5 class="text-secondary mb-1">${escapeHTML('ID: ' + p.id)}</h5>
             <p class="card-text color-page">${formatearARS(p.precio)}</p>
             <a href="#" class="btn btn-outline-dark agregar-carrito"
               data-nombre="${escapeHTML(p.nombre)}"
@@ -113,7 +98,6 @@ async function init() {
       const btn = e.target.closest('.agregar-carrito');
       if (!btn) return;
       e.preventDefault();
-
       const toast = document.getElementById('toast');
       if (toast) {
         toast.textContent = `${btn.dataset.nombre} agregado al carrito 🛍️`;

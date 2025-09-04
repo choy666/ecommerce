@@ -265,7 +265,10 @@ a {
   align-items: center;
   justify-content: center;
 }
-
+.card-stock{
+  top: 100% !important; /* o el valor que te guste */
+  transform: translate(-50%, -90%);
+}
 /* ====================================================
 🧩 10) UTILIDADES Y AJUSTES ESPECÍFICOS
 ==================================================== */
@@ -336,7 +339,7 @@ a {
   .ubicacion{
     height: 150px;
   }
-  .card-title{
+  .card-body .text-secondary,.card-title {
     font-size: 0.7rem;
   }
   .flip-img-container {
@@ -387,3 +390,4 @@ a {
 .logo-usuario{
 margin-top: 32px;
 }
+
